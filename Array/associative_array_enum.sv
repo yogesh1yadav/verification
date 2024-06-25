@@ -12,6 +12,8 @@ module associative_array_enum;
     array_enum[red]=10;                                        // bcz it is not stored in contiguous manner, and data space is sparse 
     array_enum[green]=20;
 
+    $display("array_enum= %p",array_enum);                              //use %p to show array like this # KERNEL: array_enum= '{red:10, blue:15, green:20}
+    
     foreach (array_enum[i])begin													         
       $display("array_enum[%0d] = %0d", i , array_enum[i]);                   // i simply print numbering of index in integer    
       $display("array_enum[%0s] = %0d", i.name() , array_enum[i]);					  // i.name() used to print the array index with enum string names  
@@ -23,6 +25,7 @@ endmodule
 
 
 /*OUTPUT
+# KERNEL: array_enum='{red:10, blue:15, green:20}
 # KERNEL: array_enum[0] = 10
 # KERNEL: array_enum[red] = 10
 # KERNEL: --------------
